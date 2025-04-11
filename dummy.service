@@ -1,0 +1,11 @@
+[Unit]
+Description=Dummy Systemd Service
+After=network.target
+
+[Service]
+ExecStart=/bin/bash -c "/usr/bin/dummy/dummy.sh | tee /var/log/dummy-service.log"
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
